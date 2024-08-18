@@ -40,6 +40,44 @@ public class numero_perfeito {
     }
 }
 
+// 25
+
+public class piramidal {
+    public static void main(String[] args) {
+        int num_primos = 2;   // Número inicial para verificar se é primo
+        int[] primos = new int[102]; // Array para armazenar números primos
+        int count = 0; // Contador para o número de primos encontrados
+        
+        // Encontrar e armazenar números primos
+        while (count < 102) { // Precisamos de 102 números primos para garantir 100 somas deslizantes
+            if (Primo(num_primos)) {
+                primos[count] = num_primos;
+                count++;
+            }
+            num_primos++;
+        }
+        
+        // Calcular e imprimir as primeiras 100 somas de grupos de 3 números primos
+        System.out.println("Primeiros 100 valores das somas:");
+        for (int i = 0; i < 100; i++) {
+            int soma = primos[i] + primos[i + 1] + primos[i + 2];
+            System.out.println(soma);
+        }
+    }
+
+    public static boolean Primo(int numero) {
+        if (numero <= 1) return false;
+        if (numero <= 3) return true;
+        if (numero % 2 == 0 || numero % 3 == 0) return false;
+        for (int i = 5; i * i <= numero; i += 6) {
+            if (numero % i == 0 || numero % (i + 2) == 0) return false;
+        }
+        return true;
+    }
+}
+
+
+
 // 32
 import java.util.Scanner;
 

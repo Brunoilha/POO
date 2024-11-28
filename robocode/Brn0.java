@@ -1,3 +1,5 @@
+
+// Codigo do Bruno Ilha Carneiro
 package aula;
 
 import robocode.*;
@@ -40,3 +42,5 @@ public class BrN0 extends Robot {
         turnRight(90); 
     }
 }
+
+// Codigo do Bruno Ilha Carneiro
